@@ -22,7 +22,7 @@ export default function ChartContainer({
   className = '',
 }: ChartContainerProps) {
   return (
-    <div className={`flex flex-col rounded-xl border border-dashboard-border bg-dashboard-card p-4 backdrop-blur-sm ${className}`}>
+    <div className={`flex flex-col flex-1 rounded-xl border border-dashboard-border bg-dashboard-card p-4 backdrop-blur-sm ${className}`}>
       <h3 className="text-sm font-medium text-gray-300 mb-3 shrink-0">{title}</h3>
       <div className="relative flex-1 min-h-[200px]">
         {loading && (

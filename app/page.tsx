@@ -34,36 +34,36 @@ export default function Home() {
           <div className="hidden lg:flex flex-1 flex-col gap-3 overflow-y-auto pr-1">
             {/* Row 1: CPU + Disk side by side */}
             <div className="grid grid-cols-[1fr_280px] gap-3 min-h-[380px]">
-              <CpuChart />
-              <DiskPanel />
+              <div className="flex flex-col"><CpuChart /></div>
+              <div className="flex flex-col"><DiskPanel /></div>
             </div>
 
             {/* Row 2: Memory */}
-            <div className="min-h-[350px]">
+            <div className="flex flex-col min-h-[350px]">
               <MemoryChart />
             </div>
 
             {/* Row 3: Load */}
-            <div className="min-h-[300px]">
+            <div className="flex flex-col min-h-[300px]">
               <LoadChart />
             </div>
 
             {/* Row 4: Network + Process */}
             <div className="grid grid-cols-2 gap-3 min-h-[280px]">
-              <NetworkChart />
-              <ProcessChart />
+              <div className="flex flex-col"><NetworkChart /></div>
+              <div className="flex flex-col"><ProcessChart /></div>
             </div>
           </div>
 
           {/* Mobile: all charts stacked */}
           <div className="lg:hidden flex flex-col gap-3 w-full">
-            <div className="min-h-[300px]"><CpuChart /></div>
-            <div className="min-h-[300px]"><MemoryChart /></div>
-            <div className="min-h-[300px]"><LoadChart /></div>
-            <div className="min-h-[380px]"><DiskPanel /></div>
+            <div className="flex flex-col min-h-[300px]"><CpuChart /></div>
+            <div className="flex flex-col min-h-[300px]"><MemoryChart /></div>
+            <div className="flex flex-col min-h-[300px]"><LoadChart /></div>
+            <div className="flex flex-col min-h-[380px]"><DiskPanel /></div>
             <div className="grid grid-cols-1 gap-3 min-h-[250px]">
-              <NetworkChart />
-              <ProcessChart />
+              <div className="flex flex-col"><NetworkChart /></div>
+              <div className="flex flex-col"><ProcessChart /></div>
             </div>
           </div>
         </main>
