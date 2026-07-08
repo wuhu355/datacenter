@@ -22,19 +22,19 @@ export async function GET() {
       ) as any
       const [[{ cpuAvg }]] = await pool.execute(
         `SELECT ROUND(AVG(value), 1) AS cpuAvg
-         FROM pref_tsar WHERE tag = 'cpu_percent' AND mod = 'cpu_usage'
+         FROM pref_tsar WHERE tag = 'cpu_percent' AND \`mod\` = 'cpu_usage'
          AND ts >= ?`,
         [oneHourAgo]
       ) as any
       const [[{ memAvg }]] = await pool.execute(
         `SELECT ROUND(AVG(value), 1) AS memAvg
-         FROM pref_tsar WHERE tag = 'mem_metric' AND mod = 'mem_used'
+         FROM pref_tsar WHERE tag = 'mem_metric' AND \`mod\` = 'mem_used'
          AND ts >= ?`,
         [oneHourAgo]
       ) as any
       const [[{ loadAvg }]] = await pool.execute(
         `SELECT ROUND(AVG(value), 2) AS loadAvg
-         FROM pref_tsar WHERE tag = 'load_average' AND mod = 'load1'
+         FROM pref_tsar WHERE tag = 'load_average' AND \`mod\` = 'load1'
          AND ts >= ?`,
         [oneHourAgo]
       ) as any
