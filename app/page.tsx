@@ -13,18 +13,18 @@ import ProcessChart from './components/dashboard/ProcessChart'
 export default function Home() {
   return (
     <DashboardProvider>
-      <div className="h-screen flex flex-col overflow-hidden">
+      <div className="min-h-screen flex flex-col">
         {/* Header */}
         <HeaderBar />
 
         {/* Main grid: PC 5 zones, Mobile single column */}
-        <main className="flex-1 grid gap-3 p-3 overflow-hidden
+        <main className="flex-1 grid gap-3 p-3
           grid-cols-1
           lg:grid-cols-[220px_1fr_280px]
-          lg:grid-rows-[1fr_180px]">
+          lg:grid-rows-[1fr_1fr_1fr_250px]">
 
-          {/* Left: Host list - PC sidebar, Mobile hidden by default */}
-          <div className="hidden lg:block lg:row-span-2 overflow-hidden">
+          {/* Left: Host list - PC sidebar, Mobile top */}
+          <div className="hidden lg:block lg:row-span-4 min-h-0">
             <HostList />
           </div>
 
@@ -33,20 +33,28 @@ export default function Home() {
             <HostList />
           </div>
 
-          {/* Center: CPU + Memory + Load */}
-          <div className="grid grid-rows-3 gap-3 overflow-hidden">
+          {/* Center: CPU */}
+          <div className="min-h-[300px] lg:min-h-0">
             <CpuChart />
+          </div>
+
+          {/* Center: Memory */}
+          <div className="min-h-[300px] lg:min-h-0">
             <MemoryChart />
+          </div>
+
+          {/* Center: Load */}
+          <div className="min-h-[300px] lg:min-h-0">
             <LoadChart />
           </div>
 
           {/* Right: Disk panel */}
-          <div className="lg:row-span-2 overflow-hidden">
+          <div className="lg:row-span-3 min-h-[400px] lg:min-h-0">
             <DiskPanel />
           </div>
 
           {/* Bottom: Network + Process */}
-          <div className="grid grid-cols-2 gap-3 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 min-h-[250px]">
             <NetworkChart />
             <ProcessChart />
           </div>

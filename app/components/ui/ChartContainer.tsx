@@ -24,7 +24,7 @@ export default function ChartContainer({
   return (
     <div className={`flex flex-col rounded-xl border border-dashboard-border bg-dashboard-card p-4 backdrop-blur-sm ${className}`}>
       <h3 className="text-sm font-medium text-gray-300 mb-3 shrink-0">{title}</h3>
-      <div className="relative flex-1 min-h-0">
+      <div className="relative flex-1 min-h-[200px]">
         {loading && (
           <div className="absolute inset-0 flex items-center justify-center bg-dashboard-bg/50 z-10 rounded-lg">
             <div className="w-8 h-8 border-2 border-dashboard-accent border-t-transparent rounded-full animate-spin" />
