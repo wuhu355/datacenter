@@ -32,17 +32,20 @@ export default function Home() {
 
           {/* Right: scrollable chart area */}
           <div className="hidden lg:flex flex-1 flex-col gap-3 overflow-y-auto pr-1">
-            {/* Upper: 3-column grid — Center charts + Right disk panel */}
-            <div className="grid grid-cols-[1fr_280px] gap-3"
-              style={{ gridTemplateRows: 'minmax(380px,auto) minmax(350px,auto) minmax(300px,auto)' }}>
-              {/* Center Row 1: CPU */}
-              <div className="flex flex-col"><CpuChart /></div>
-              {/* Right: Disk panel spans all 3 rows */}
-              <div className="flex flex-col" style={{ gridRow: '1 / 4' }}><DiskPanel /></div>
-              {/* Center Row 2: Memory */}
-              <div className="flex flex-col"><MemoryChart /></div>
-              {/* Center Row 3: Load */}
-              <div className="flex flex-col"><LoadChart /></div>
+            {/* Upper: Center charts + Right disk panel */}
+            <div className="grid gap-3"
+              style={{
+                gridTemplateColumns: '1fr 280px',
+                gridTemplateRows: 'minmax(380px,auto) minmax(350px,auto) minmax(300px,auto)',
+              }}>
+              {/* Center Col 1, Row 1: CPU */}
+              <div className="flex flex-col" style={{ gridColumn: '1', gridRow: '1' }}><CpuChart /></div>
+              {/* Center Col 1, Row 2: Memory */}
+              <div className="flex flex-col" style={{ gridColumn: '1', gridRow: '2' }}><MemoryChart /></div>
+              {/* Center Col 1, Row 3: Load */}
+              <div className="flex flex-col" style={{ gridColumn: '1', gridRow: '3' }}><LoadChart /></div>
+              {/* Right Col 2, Row 1-3: Disk panel */}
+              <div className="flex flex-col" style={{ gridColumn: '2', gridRow: '1 / 4' }}><DiskPanel /></div>
             </div>
 
             {/* Bottom: Network + Process */}
