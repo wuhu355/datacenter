@@ -35,7 +35,7 @@ export default function Home() {
             {/* Upper: Center charts + Right disk panel */}
             <div className="grid gap-3"
               style={{
-                gridTemplateColumns: '1fr 280px',
+                gridTemplateColumns: '1fr 380px',
                 gridTemplateRows: 'minmax(380px,auto) minmax(350px,auto) minmax(300px,auto)',
               }}>
               {/* Center Col 1, Row 1: CPU */}
